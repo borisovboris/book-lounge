@@ -1,3 +1,51 @@
 * {
+    color: black;
+}
+
+.float-right {
+    float: right;
+}
+
+.nav-btn {
+    padding: 20px 15px;
+    transition: 0.14s;
+}
+
+nav {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.64);
     color: white;
+}
+
+#home-btn {
+    transition: 0.14s;
+    position: relative;
+}
+
+#home-btn:hover {
+    color: rgb(206, 0, 0);
+}
+
+#home-btn:after {
+    bottom: -5px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background-color: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#home-btn:hover:after { 
+    width: 100%; 
+    left: 0; 
 }
