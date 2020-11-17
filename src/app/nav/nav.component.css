@@ -7,33 +7,23 @@
 }
 
 .nav-btn {
-    padding: 20px 15px;
-    transition: 0.14s;
+    margin: 0px 15px;
 }
 
 nav {
     padding: 20px 40px;
     font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.87);
     margin-bottom: 30px;
 }
 
-.nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.64);
-    color: white;
-}
 
-#home-btn {
-    transition: 0.14s;
+nav a {
     position: relative;
 }
 
-#home-btn:hover {
-    color: rgb(206, 0, 0);
-}
 
-#home-btn:after {
+.underline:after {
     bottom: -5px;
     content: "";
     display: block;
@@ -45,7 +35,7 @@ nav {
     width: 0;
 }
 
-#home-btn:hover:after { 
+.underline:hover:after { 
     width: 100%; 
     left: 0; 
 }
