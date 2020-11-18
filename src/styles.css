@@ -18,3 +18,19 @@ body {
 .btn:hover {
     cursor: pointer;
 }
+
+.center-text {
+    text-align: center;
+}
+
+.largest-font {
+    font-size: 4rem; 
+}
+
+.large-font {
+    font-size: 3rem;
+}
+
+.medium-font {
+    font-size: 2rem;
+}
