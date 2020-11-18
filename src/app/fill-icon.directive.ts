@@ -9,19 +9,19 @@ export class FillIconDirective {
 
   @HostListener('mouseover') 
   onMouseOver() {
-    // this.renderer.removeClass(this.elRef.nativeElement, 'far');
-    // this.renderer.addClass(this.elRef.nativeElement, 'fas');
-    this.el.nativeElement.classList.remove('far');
-    this.el.nativeElement.classList.add('fas');
+    this.renderer.removeClass(this.el.nativeElement, 'far');
+    this.renderer.addClass(this.el.nativeElement, 'fas');
+    // this.el.nativeElement.classList.remove('far');
+    // this.el.nativeElement.classList.add('fas');
     
   }
 
   @HostListener('mouseout') 
   onMouseOut() {
-    // this.renderer.removeClass(this.elRef.nativeElement, 'fas');
-    // this.renderer.addClass(this.elRef.nativeElement, 'far');
-    this.el.nativeElement.classList.remove('fas');
-    this.el.nativeElement.classList.add('far');
+    this.renderer.removeClass(this.el.nativeElement, 'fas');
+    this.renderer.addClass(this.el.nativeElement, 'far');
+    // this.el.nativeElement.classList.remove('fas');
+    // this.el.nativeElement.classList.add('far');
   }
 
 }
