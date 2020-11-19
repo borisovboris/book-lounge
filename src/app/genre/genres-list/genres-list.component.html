@@ -1,1 +1,6 @@
-<p>genres-list works!</p>
+
+<div class="flex-container">
+    <app-genre *ngFor="let genre of ($genres | async)" [genre]="genre"></app-genre>
+</div>
+
+

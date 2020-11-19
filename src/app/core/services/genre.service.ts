@@ -8,14 +8,14 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class GenreService {
-  $genres: Observable<Array<IGenre>>;
+  $genres: Observable<IGenre[]>;
 
   constructor() { 
     
   }
 
-  getGenres() {
-    this.$genres = of(genres);
+  getGenres(): Observable<IGenre[]> {
+    return this.$genres = of(genres);
   }
-  
+
 }
