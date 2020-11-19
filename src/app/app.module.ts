@@ -7,6 +7,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { FillIconDirective } from './fill-icon.directive';
+import { GenresListComponent } from './genre/genres-list/genres-list.component';
+import { GenreComponent } from './genre/genre/genre.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FillIconDirective } from './fill-icon.directive';
     LandingPageComponent,
     NavComponent,
     FooterComponent,
-    FillIconDirective
+    FillIconDirective,
+    GenresListComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
