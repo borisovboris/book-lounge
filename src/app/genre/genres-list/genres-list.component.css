@@ -1,9 +1,13 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    padding: 5px;
 }
 
 .flex-item {
     flex: 25%;
-    background-color: green;
+}
+
+.genres-list-container {
+    padding: 0px 200px;
 }

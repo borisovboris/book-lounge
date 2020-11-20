@@ -1,12 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 body {
     background-image: url("assets/images/stains.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    font-family: 'Playfair Display', serif;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 * {
