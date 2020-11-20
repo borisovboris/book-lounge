@@ -18,7 +18,7 @@ export class ScrollService  {
   manageNavbar(navbar: ElementRef) {
     fromEvent(window, 'scroll').pipe(throttleTime(this.debounceInterval)).subscribe(
       () => { 
-        console.log('scroll');
+        
         const currentScrollPos = this.viewportScroller.getScrollPosition()[1];
         const el = navbar.nativeElement;
     

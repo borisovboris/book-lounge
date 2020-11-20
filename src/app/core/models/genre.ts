@@ -1,4 +1,4 @@
 export interface IGenre {
     name: string;
-    imageUrl: string;
+    imageName: string;
 }

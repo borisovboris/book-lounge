@@ -9,10 +9,12 @@ import { IGenre } from 'src/app/core/models/genre';
 export class GenreComponent implements OnInit {
 
   @Input() genre: IGenre;
+  imageUrl: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.imageUrl = 'assets/images/genres/' + this.genre.imageName;
   }
 
 }
