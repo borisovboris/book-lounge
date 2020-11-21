@@ -1,7 +1,8 @@
 
-<h3>Browse Genres</h3>
 
 <div class="genres-list-container">
+    <p id="browse-genres-title" class="black-text medium-font letter-spacing">Browse Genres</p>
+    
     <div class="flex-container">
         <app-genre *ngFor="let genre of ($genres | async)" [genre]="genre" class="flex-item"></app-genre>
     </div>

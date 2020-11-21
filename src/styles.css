@@ -37,3 +37,11 @@ body {
 .smaller-font {
     font-size: 1.2rem;
 }
+
+.black-text {
+    color: black;
+}
+
+.letter-spacing {
+    letter-spacing: 0.33rem;
+}
