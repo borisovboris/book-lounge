@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn:hover {
@@ -44,4 +45,13 @@ body {
 
 .letter-spacing {
     letter-spacing: 0.33rem;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+
+.bold {
+    font-weight: bold;
 }

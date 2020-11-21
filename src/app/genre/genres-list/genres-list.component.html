@@ -1,11 +1,13 @@
 
 
 <div class="genres-list-container">
-    <p id="browse-genres-title" class="black-text medium-font letter-spacing">Browse Genres</p>
+    <p id="browse-genres-title" class="black-text medium-font letter-spacing margin-left-8 small-caps">browse genres</p>
     
     <div class="flex-container">
         <app-genre *ngFor="let genre of ($genres | async)" [genre]="genre" class="flex-item"></app-genre>
     </div>
+
+    <a id="all-genres" class="black-text margin-left-8 small-caps smaller-font bold btn">all genres</a>
 </div>
 
 
