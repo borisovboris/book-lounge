@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FillIconDirective } from './fill-icon.directive';
 import { GenresListComponent } from './genre/genres-list/genres-list.component';
 import { GenreComponent } from './genre/genre/genre.component';
+import { TodayBooksComponent } from './today-books/today-books.component';
+import { BookComponent } from './shared/book/book.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { GenreComponent } from './genre/genre/genre.component';
     FooterComponent,
     FillIconDirective,
     GenresListComponent,
-    GenreComponent
+    GenreComponent,
+    TodayBooksComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

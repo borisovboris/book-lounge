@@ -7,10 +7,10 @@
     flex: 25%;
 }
 
-.genres-list-container {
+#genres-list-container {
     padding: 50px 200px;
     background-color: #f2f2f2;
-    margin: 100px 0;
+    margin-top: 100px;
     overflow: auto;
 }
 
