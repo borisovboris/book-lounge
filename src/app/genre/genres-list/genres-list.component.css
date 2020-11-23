@@ -6,6 +6,7 @@
 
 .flex-item {
     flex: 25%;
+    flex-grow: 0;
 }
 
 #genres-list-container {

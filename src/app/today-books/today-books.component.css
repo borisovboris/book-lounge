@@ -16,10 +16,12 @@
 
 .flex-item {
     flex: 16.666%;
+    flex-grow: 0;
 }
 
 #all-books {
     padding: 10px 10px;
+    color: white;
     float: left;
     background-image: linear-gradient(120deg, #f2f2f2 0%, #f2f2f2 100%);
     background-position: 0 110%;
@@ -32,7 +34,6 @@
 
 #all-books:hover {
     background-size: 100% 100%;
-    text-decoration: none;
     color: black;
     cursor: pointer;
 }

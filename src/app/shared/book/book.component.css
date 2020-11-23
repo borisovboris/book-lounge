@@ -2,6 +2,7 @@ img {
     width: 100%;
     height: auto;
     display: block;
+    object-position: top center;
 }
 
 .card {
@@ -9,13 +10,6 @@ img {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.card-text {
-    position: absolute;
-    padding: 10px 0;
-    width: 100%;
-    font-weight: 700;
 }
 
 .card:hover {
@@ -28,4 +22,8 @@ img {
 
 .card:hover img {
     transform: scale(1.1);
+}
+
+.margin-left-8 {
+    margin-left: 8px;
 }
