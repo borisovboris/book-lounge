@@ -1,0 +1,22 @@
+footer {
+    background-color: #252e22;
+    padding: 50px 100px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex-grow: 0;
+    flex: 33.33%;
+}
+
+.flex-item p {
+    text-transform: uppercase;
+}
+
+.headline {
+    padding: 10px 0;
+}
