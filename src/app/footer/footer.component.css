@@ -1,6 +1,6 @@
 footer {
     background-color: #252e22;
-    padding: 50px 100px;
+    padding: 50px 80px;
 }
 
 .flex-container {
@@ -13,10 +13,22 @@ footer {
     flex: 33.33%;
 }
 
-.flex-item p {
+.headline {
     text-transform: uppercase;
 }
 
 .headline {
-    padding: 10px 0;
+    padding: 15px 0;
+}
+
+.item {
+    margin: 5px 0;
+    float: left;
+    clear: both;
+    flex: 0 0 auto;
+}
+
+.item:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
