@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url("assets/images/stains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    scroll-behavior:  smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.largest-font {
+    font-size: 4rem; 
+}
+
+.large-font {
+    font-size: 3rem;
+}
+
+.medium-font {
+    font-size: 2rem;
+}
+
+.smaller-font {
+    font-size: 1.2rem;
+}
+
+.black-text {
+    color: black;
+}
+
+.letter-spacing {
+    letter-spacing: 0.33rem;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+
+.bold {
+    font-weight: bold;
+}

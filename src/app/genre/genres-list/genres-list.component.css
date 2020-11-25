@@ -1,0 +1,41 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.flex-item {
+    flex: 25%;
+    flex-grow: 0;
+}
+
+#genres-list-container {
+    padding: 50px 200px;
+    background-color: #f2f2f2;
+    margin-top: 100px;
+    overflow: auto;
+}
+
+
+#all-genres {
+    padding: 10px 10px;
+    float: left;
+    background-image: linear-gradient(120deg, black 0%, black 100%);
+    background-position: 0 110%;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    transition: background-size 0.125s ease-in;
+}
+
+#all-genres:hover {
+    background-size: 100% 100%;
+    text-decoration: none;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.margin-left-8 {
+    margin-left: 8px;
+}

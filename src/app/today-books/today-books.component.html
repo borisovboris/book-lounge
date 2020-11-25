@@ -1,0 +1,10 @@
+<div id="today-books-container">
+    <p id="today-picks-title" class="medium-font letter-spacing margin-left-8 small-caps">today's picks</p>
+
+    <div class="flex-container">
+        <app-book *ngFor="let book of ($books | async)" [book]="book" class="flex-item"></app-book>
+    </div>
+
+    <a id="all-books" class="margin-left-8 small-caps smaller-font bold btn" routerLink='/books'>all books</a>
+    
+</div>

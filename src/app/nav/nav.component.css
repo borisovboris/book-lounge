@@ -1,0 +1,45 @@
+
+
+* {
+    color: black;
+}
+
+.float-right {
+    float: right;
+}
+
+.nav-btn {
+    margin: 0px 15px;
+}
+
+nav {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    background-color: white;
+}
+
+
+nav a {
+    position: relative;
+    text-decoration: none;
+}
+
+
+
+
+.underline:after {
+    bottom: -5px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background-color: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.underline:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
