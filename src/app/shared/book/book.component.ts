@@ -13,7 +13,7 @@ export class BookComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('called');
+
     this.bookImageUrl = 'assets/images/books/' + this.book.coverImage;
   }
 

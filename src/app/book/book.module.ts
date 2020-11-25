@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [BookListComponent],
+  declarations: [],
   imports: [
     CommonModule,
     BookRoutingModule,
