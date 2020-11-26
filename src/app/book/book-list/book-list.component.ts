@@ -18,7 +18,6 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.$books.subscribe(data => console.log(data));
   }
 
 }

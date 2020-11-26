@@ -6,7 +6,7 @@
         <app-genre *ngFor="let genre of ($genres | async)" [genre]="genre" class="flex-item"></app-genre>
     </div>
 
-    <a id="all-genres" class="black-text margin-left-8 small-caps smaller-font bold btn">all genres</a>
+    <a id="all-genres" class="black-text margin-left-8 small-caps smaller-font bold btn" routerLink="/genres">all genres</a>
 </div>
 
 
