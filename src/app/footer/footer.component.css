@@ -22,11 +22,12 @@ footer {
 }
 
 .item {
-    padding: 5px 0;
+    margin: 5px 0;
     display: block;
     float: left;
     clear: both;
     flex: 0 0 auto;
+    border-bottom: solid transparent 1px;
 }
 
 .item:hover {
