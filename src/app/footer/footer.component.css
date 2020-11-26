@@ -22,13 +22,14 @@ footer {
 }
 
 .item {
-    margin: 5px 0;
+    padding: 5px 0;
+    display: block;
     float: left;
     clear: both;
     flex: 0 0 auto;
 }
 
 .item:hover {
-    text-decoration: underline;
+    border-bottom: white solid 1px;
     cursor: pointer;
 }

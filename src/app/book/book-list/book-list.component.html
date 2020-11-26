@@ -1,3 +1,8 @@
+<h1 class="center-text largest-font letter-spacing">{{heading}}</h1>
 <div id="book-container">
-    <app-book *ngFor="let book of ($books | async)" [book]="book"></app-book>
+    <div class="flex-container black-text medium-font">
+        <app-book *ngFor="let book of ($books | async)" [book]="book" class="flex-item"></app-book>
+        <app-book *ngFor="let book of ($books | async)?.slice().reverse()" [book]="book" class="flex-item"></app-book>
+        <app-book *ngFor="let book of ($books | async)" [book]="book" class="flex-item"></app-book>
+    </div>
 </div>

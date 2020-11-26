@@ -9,7 +9,7 @@ import { BookService } from 'src/app/core/services/book.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-
+  heading: string = "All Books"
   $books: Observable<Array<IBook>>;
 
   constructor(private bookService: BookService) { 
