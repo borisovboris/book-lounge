@@ -22,7 +22,7 @@ export class ScrollService  {
         const currentScrollPos = this.viewportScroller.getScrollPosition()[1];
         const el = navbar.nativeElement;
     
-        if(currentScrollPos > this.prevScrollPos && currentScrollPos > 100) {
+        if(currentScrollPos > this.prevScrollPos && currentScrollPos > 20) {
           el.style.top = "-80px";
         } else {
           el.style.top = "0px";

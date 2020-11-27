@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { IBook } from 'src/app/core/models/book';
 
 @Component({
   selector: 'app-book-details',
@@ -9,10 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 export class BookDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
-  bookId: string;
+  book$: IBook;
 
   ngOnInit(): void {
-    this.bookId = this.route.snapshot.paramMap.get('id');
+    this.route.data
+    .subscribe((data: {book: IBook}) => this.book$ = data.book);
   }
 
 }
