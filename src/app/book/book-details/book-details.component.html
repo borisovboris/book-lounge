@@ -1,4 +1,8 @@
-<div id="book-container">
-    <p>THIS IS A BOOK</p>
-    {{book$ | json}}
+<div id="book-container" class="black-text flex-container">
+    
+    <div class="flex-item flex-25">Picture</div>
+    <div class="flex-item flex-75">
+        <h1>{{book.title}}</h1>
+        <p>{{book.synopsis}}</p>
+    </div>
 </div>

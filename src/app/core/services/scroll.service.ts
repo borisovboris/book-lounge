@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { ElementRef, Injectable } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { debounceTime, throttleTime } from 'rxjs/operators';
+import { throttleTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +9,14 @@ import { debounceTime, throttleTime } from 'rxjs/operators';
 export class ScrollService  {
 
   private prevScrollPos: number = 0;
-  private debounceInterval = 175;
+  private throttleInterval = 100;
 
   constructor(private viewportScroller: ViewportScroller) { 
 
   }
 
   manageNavbar(navbar: ElementRef) {
-    fromEvent(window, 'scroll').pipe(throttleTime(this.debounceInterval)).subscribe(
+    fromEvent(window, 'scroll').pipe(throttleTime(this.throttleInterval)).subscribe(
       () => { 
         
         const currentScrollPos = this.viewportScroller.getScrollPosition()[1];

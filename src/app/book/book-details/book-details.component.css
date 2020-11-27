@@ -1,4 +1,20 @@
 #book-container {
     background-color: #f2f2f2;
     min-height: 100vh;
+    padding: 100px 200px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-25 {
+    flex: 25%;
+    flex-grow: 0;
+}
+
+.flex-75 {
+    flex: 75%;
+    flex-grow: 0;
 }
