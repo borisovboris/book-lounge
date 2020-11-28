@@ -1,4 +1,4 @@
-#book-container {
+.book-container {
     background-color: #f2f2f2;
     min-height: 100vh;
     padding: 100px 200px;
@@ -17,4 +17,24 @@
 .flex-75 {
     flex: 75%;
     flex-grow: 0;
+}
+
+.book-buttons {
+    margin: 30px 0;
+}
+
+.book-button {
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin-right: 15px;
+}
+
+.book-info p{
+    padding: 10px 0;
+}
+
+.share-book {
+    margin-top: 20px;
 }

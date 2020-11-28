@@ -1,8 +1,33 @@
-<div id="book-container" class="black-text flex-container">
+<div class="black-text flex-container book-container">
     
-    <div class="flex-item flex-25">Picture</div>
+    <div class="flex-item flex-25">
+        <img src="{{bookImage}}">
+        <div class="book-info">
+            <p>Published: {{book.publishDate}}</p>
+            <p>Pages: {{book.pages}}</p>
+            <p>Downloads: {{book.downloadsNumber}}</p>
+        </div>
+
+        <p class="bold share-book">Share this</p>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-square"></i>
+    </div>
     <div class="flex-item flex-75">
         <h1>{{book.title}}</h1>
+        <div>
+            <p>By: {{book.author}}</p>
+            <p>Rating Stars</p>
+        </div>
+
+        <div class="book-buttons">
+            <a class="book-button btn">Free Download</a>
+            <a class="book-button btn">Read Online</a>
+        </div>
+
         <p>{{book.synopsis}}</p>
+
+        <div>
+            <p *ngFor="let genre of book.genres">{{genre}}</p>
+        </div>
     </div>
 </div>

@@ -12,10 +12,15 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
   book: IBook;
+  bookImage: string;
 
   ngOnInit(): void {
     this.route.data
-    .subscribe((data: {book: IBook}) => this.book = data.book);
+    .subscribe((data: {book: IBook}) => 
+      { this.book = data.book; this.bookImage = `assets/images/books/${this.book.coverImage}` }
+    );
+
+
   }
 
 }
