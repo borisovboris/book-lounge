@@ -8,9 +8,13 @@
             <p>Downloads: {{book.downloadsNumber}}</p>
         </div>
 
-        <p class="bold share-book">Share this</p>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook-square"></i>
+        <p class="bold share-book">Share this book</p>
+        <div class="book-socials medium-font">
+            <i class="fab fa-twitter btn"></i>
+            <i class="fab fa-facebook-square btn"></i>
+            <i class="fab fa-pinterest btn"></i>
+        </div>
+        
     </div>
     <div class="flex-item flex-75">
         <h1>{{book.title}}</h1>
@@ -20,14 +24,14 @@
         </div>
 
         <div class="book-buttons">
-            <a class="book-button btn">Free Download</a>
-            <a class="book-button btn">Read Online</a>
+            <div class="book-button btn"><i class="fas fa-file-download"></i><a>Free Download</a></div>
+            <div class="book-button btn"><a>Read Online</a></div>
         </div>
 
         <p>{{book.synopsis}}</p>
 
-        <div>
-            <p *ngFor="let genre of book.genres">{{genre}}</p>
+        <div class="book-genres">
+            <p *ngFor="let genre of book.genres" class="book-genre btn">{{genre}}</p>
         </div>
     </div>
 </div>

@@ -31,10 +31,51 @@
     margin-right: 15px;
 }
 
+.book-button .fa-file-download {
+    margin-right: 10px;
+}
+
 .book-info p{
     padding: 10px 0;
 }
 
 .share-book {
     margin-top: 20px;
+}
+
+.book-socials {
+    padding: 10px 0;
+}
+.book-socials i {
+    margin-right: 10px;
+}
+
+.book-socials .fa-twitter:hover {
+    color: #1da1f2;
+}
+
+.book-socials .fa-facebook-square:hover {
+    color: #3b5998;
+}
+
+.book-socials .fa-pinterest:hover {
+    color: #db2a2a
+}
+
+.book-genre {
+    display: inline-block;
+    padding: 5px;
+    border: black solid 1px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.book-genre:hover {
+    color: #f2f2f2;
+    background-color: black;
+}
+
+
+.book-genres {
+    padding: 15px 0;
 }
