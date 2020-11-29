@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: 'books', loadChildren: () => import('./book/book.module').then(m => m.BookModule)},
+  { path: 'books', loadChildren: () => import('./book/book.module').then(m => m.BookModule) },
+  { path: 'genres', loadChildren: () => import('./genres/genres.module').then(m => m.GenresModule) },
   { path: 'home', component: LandingPageComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full'}
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

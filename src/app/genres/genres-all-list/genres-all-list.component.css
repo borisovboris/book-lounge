@@ -1,0 +1,29 @@
+.genres-all-container {
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: #f2f2f2;
+    min-height: 100vh
+}
+
+.genres-names ul{
+    margin-top: 50px;
+    padding: 10px 0;
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.genres-names li {
+    list-style: none;
+    margin: 3px 0;
+    border-bottom: 1px solid transparent;
+    display: block;
+}
+
+.genres-names a:hover {
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
