@@ -1,7 +1,9 @@
 <div class="wrapper">
-  <app-login id="login-container"></app-login>
+  <div>
+    <ng-template #logintemp></ng-template>
+  </div>
   
-  <app-nav #navbar id="navbar"></app-nav>
+  <app-nav #navbar id="navbar" (click)="loadLoginComponent()"></app-nav>
   <div id="container">
     <router-outlet></router-outlet>
   </div>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, HostListener, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
 
@@ -9,28 +9,30 @@ import { ScrollService } from './core/services/scroll.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  // private prevScrollPos: number = 0;
+  @ViewChild('logintemp', { read: ViewContainerRef })
+  private loginViewContainerRef: ViewContainerRef; 
+
   title = 'book-lounge';
 
   @ViewChild(NavComponent, {read: ElementRef}) navbar: ElementRef;
 
-  // @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-  //   const currentScrollPos = window.pageYOffset;
-  //   const el = this.navbar.nativeElement;
 
-  //   if(currentScrollPos > this.prevScrollPos) {
-  //     el.style.top = "-80px";
-  //   } else {
-  //     el.style.top = "0px";
-  //   }
-    
-  //   this.prevScrollPos = currentScrollPos;
-  // } 
-
-  constructor(private scrollService: ScrollService) { }
+  constructor(
+    private scrollService: ScrollService,
+    private vcref: ViewContainerRef,
+    private cfr: ComponentFactoryResolver
+   ) { }
 
   ngAfterViewInit() {
     this.scrollService.manageNavbar(this.navbar);
+  }
+
+  async loadLoginComponent() {
+    this.vcref.clear();
+    const { LoginComponent } = await import ('./auth/login/login.component');
+    this.loginViewContainerRef.createComponent(
+      this.cfr.resolveComponentFactory(LoginComponent)
+    );
   }
   
 }
