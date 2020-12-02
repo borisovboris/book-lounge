@@ -14,9 +14,24 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9;
+    z-index: 2;
     transition: top 0.3s ease-out;
 }
+
+#login-container {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: pink;
+}
+
+.wrapper {
+    position: relative;
+}
+
 
 /* #footer {
     position: relative;
