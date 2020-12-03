@@ -6,12 +6,12 @@ import { Subject } from 'rxjs';
 })
 export class AuthService {
 
-  private componentCallSource = new Subject<any>();
+  private componentCallSource = new Subject<string>();
 
   loginComponentCalled$ = this.componentCallSource.asObservable();
 
-  callLoginComponent(): void {
-    this.componentCallSource.next();
+  callLoginComponent(operation: string): void {
+    this.componentCallSource.next(operation);
   }
 
 

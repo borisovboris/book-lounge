@@ -4,6 +4,8 @@
         <a class="nav-btn btn underline" routerLink="/books">Books</a>
         <a class="nav-btn btn underline" routerLink="/genres">Genres</a>
         <a class="nav-btn btn underline">About</a>
-        <a class="nav-btn btn"><i class="far fa-user" appFillIcon></i></a>
+
+         <a class="nav-btn btn"><i class="far fa-user" appFillIcon (click)="this.authService.callLoginComponent('open')">
+         </i></a> <!-- Login -->
     </div>
 </nav>

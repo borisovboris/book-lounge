@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  constructor() { 
-    console.log('login');
+  constructor(
+    public authService: AuthService
+  ) { 
+    
   }
 
   ngOnInit(): void {

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, HostListener, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +19,18 @@ export class AppComponent implements AfterViewInit {
 
   constructor(
     private scrollService: ScrollService,
-    private vcref: ViewContainerRef,
-    private cfr: ComponentFactoryResolver
-   ) { }
+    private cfr: ComponentFactoryResolver,
+    private authService: AuthService
+   ) { 
+     this.authService.loginComponentCalled$.subscribe((operation) => {
+       if(operation === 'open') {
+        this.loadLoginComponent();
+       } else if(operation === 'close') {
+         this.removeLoginComponent();
+       }
+      
+     });
+   }
 
   ngAfterViewInit() {
     this.scrollService.manageNavbar(this.navbar);
