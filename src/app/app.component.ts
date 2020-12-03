@@ -9,8 +9,7 @@ import { ScrollService } from './core/services/scroll.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  @ViewChild('logintemp', { read: ViewContainerRef })
-  private loginViewContainerRef: ViewContainerRef; 
+  @ViewChild('logintemp', { read: ViewContainerRef }) private loginViewContainerRef: ViewContainerRef; 
 
   title = 'book-lounge';
 
@@ -28,11 +27,16 @@ export class AppComponent implements AfterViewInit {
   }
 
   async loadLoginComponent() {
-    this.vcref.clear();
-    const { LoginComponent } = await import ('./auth/login/login.component');
-    this.loginViewContainerRef.createComponent(
-      this.cfr.resolveComponentFactory(LoginComponent)
-    );
+      this.loginViewContainerRef.clear();
+      
+      const { LoginComponent } = await import ('./auth/login/login.component');
+      this.loginViewContainerRef.createComponent(
+        this.cfr.resolveComponentFactory(LoginComponent)
+      );
+  }
+
+ removeLoginComponent() {
+    this.loginViewContainerRef.clear();
   }
   
 }
