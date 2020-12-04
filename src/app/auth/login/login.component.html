@@ -1,5 +1,10 @@
-<div id="login-container">
-    <p>This is login</p>
-    <p><i class="fas fa-times" (click)="this.authService.callLoginComponent('close')"></i></p>
+<div id="login-wrapper">
+    <div id="login-container" class="centered black-text center-text card">
+        <i class="fas fa-book large-font megatron-grad"></i>
+        <p class="bold medium-font">Welcome to Book Lounge</p>
+        <p class="btn login-btn">Log in</p>
+        <p class="login-tos">By continuing, you agree to Pinterest's Terms of Service, Privacy policy and Cookie use.</p>
+        <p class="exit-button"><i class="fas fa-times btn medium-font light" (click)="this.authService.callLoginComponent('close')"></i></p>
+    </div>
 </div>
 

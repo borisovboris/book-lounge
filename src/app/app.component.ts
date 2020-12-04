@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, HostListener, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
 import { AuthService } from './core/services/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from './core/services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
 
   @ViewChild('logintemp', { read: ViewContainerRef }) private loginViewContainerRef: ViewContainerRef; 
 
@@ -22,14 +22,17 @@ export class AppComponent implements AfterViewInit {
     private cfr: ComponentFactoryResolver,
     private authService: AuthService
    ) { 
-     this.authService.loginComponentCalled$.subscribe((operation) => {
-       if(operation === 'open') {
-        this.loadLoginComponent();
-       } else if(operation === 'close') {
-         this.removeLoginComponent();
-       }
-      
-     });
+   }
+
+   ngOnInit() {
+    this.authService.loginComponentCalled$.subscribe((operation) => {
+      if(operation === 'open') {
+       this.loadLoginComponent();
+      } else if(operation === 'close') {
+        this.removeLoginComponent();
+      }
+     
+    });
    }
 
   ngAfterViewInit() {
