@@ -15,6 +15,8 @@ export class AppComponent implements AfterViewInit, OnInit {
   title = 'book-lounge';
 
   @ViewChild(NavComponent, {read: ElementRef}) navbar: ElementRef;
+  @ViewChild('globalWrapper') globalWrapper: ElementRef;
+  
 
 
   constructor(
@@ -40,6 +42,10 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   async loadLoginComponent() {
+      const wrapper = this.globalWrapper.nativeElement;
+      wrapper.style.overflow = "hidden";
+      wrapper.style.position = "fixed";
+
       this.loginViewContainerRef.clear();
       
       const { LoginComponent } = await import ('./auth/login/login.component');
@@ -50,6 +56,9 @@ export class AppComponent implements AfterViewInit, OnInit {
 
  removeLoginComponent() {
     this.loginViewContainerRef.clear();
+    const wrapper = this.globalWrapper.nativeElement;
+    wrapper.style.overflow = "";
+    wrapper.style.position = "static";
   }
   
 }
