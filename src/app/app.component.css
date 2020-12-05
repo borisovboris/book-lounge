@@ -18,9 +18,8 @@ body {
     transition: top 0.3s ease-out;
 }
 
-
 .global-wrapper {
-    position: relative;
+    width: 100%;
 }
 
 

@@ -43,8 +43,8 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   async loadLoginComponent() {
       const wrapper = this.globalWrapper.nativeElement;
-      wrapper.style.overflow = "hidden";
-      wrapper.style.position = "fixed";
+      wrapper.setAttribute('style','position:fixed');
+      
 
       this.loginViewContainerRef.clear();
       
