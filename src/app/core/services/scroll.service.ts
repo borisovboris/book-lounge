@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { ElementRef, Injectable } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, fromEvent, Observable } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 @Injectable({
@@ -8,29 +8,43 @@ import { throttleTime } from 'rxjs/operators';
 })
 export class ScrollService  {
 
-  private prevScrollPos: number = 0;
   private throttleInterval = 100;
+  private scrollPosition = new BehaviorSubject<number>(0);
+  public currentScrollPos$ = this.scrollPosition.asObservable();
 
   constructor(private viewportScroller: ViewportScroller) { 
-
+    this.getCurrentYPos();
   }
 
-  manageNavbar(navbar: ElementRef) {
+  getCurrentYPos(): void {
     fromEvent(window, 'scroll').pipe(throttleTime(this.throttleInterval)).subscribe(
       () => { 
         
         const currentScrollPos = this.viewportScroller.getScrollPosition()[1];
-        const el = navbar.nativeElement;
-    
-        if(currentScrollPos > this.prevScrollPos && currentScrollPos > 20) {
-          el.style.top = "-80px";
-        } else {
-          el.style.top = "0px";
-        }
         
-        this.prevScrollPos = currentScrollPos;
+        this.scrollPosition.next(currentScrollPos);
+        
       }
     );
   }
 
 }
+
+
+// manageNavbar(navbar: ElementRef) {
+//   fromEvent(window, 'scroll').pipe(throttleTime(this.throttleInterval)).subscribe(
+//     () => { 
+      
+//       const currentScrollPos = this.viewportScroller.getScrollPosition()[1];
+//       const el = navbar.nativeElement;
+  
+//       if(currentScrollPos > this.prevScrollPos && currentScrollPos > 20) {
+//         el.style.top = "-80px";
+//       } else {
+//         el.style.top = "0px";
+//       }
+      
+//       this.prevScrollPos = currentScrollPos;
+//     }
+//   );
+// }

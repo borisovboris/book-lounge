@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
 import { AuthService } from './core/services/auth.service';
@@ -11,11 +11,12 @@ import { AuthService } from './core/services/auth.service';
 export class AppComponent implements AfterViewInit, OnInit {
 
   @ViewChild('logintemp', { read: ViewContainerRef }) private loginViewContainerRef: ViewContainerRef; 
-
-  title = 'book-lounge';
-
   @ViewChild(NavComponent, {read: ElementRef}) navbar: ElementRef;
   @ViewChild('globalWrapper') globalWrapper: ElementRef;
+
+  private currentYPos: number = 0;
+  private previousYPos: number = 0;
+  title = 'book-lounge';
   
 
 
@@ -23,8 +24,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     private scrollService: ScrollService,
     private cfr: ComponentFactoryResolver,
     private authService: AuthService
-   ) { 
-   }
+   ) { }
 
    ngOnInit() {
     this.authService.loginComponentCalled$.subscribe((operation) => {
@@ -38,12 +38,19 @@ export class AppComponent implements AfterViewInit, OnInit {
    }
 
   ngAfterViewInit() {
-    this.scrollService.manageNavbar(this.navbar);
+    this.scrollService.currentScrollPos$.subscribe((data) => {
+      if(data !== 0) {
+        this.currentYPos = data;
+      }
+
+      this.manageNavbar();
+    });
   }
 
   async loadLoginComponent() {
       const wrapper = this.globalWrapper.nativeElement;
-      wrapper.setAttribute('style','position:fixed');
+      // wrapper.setAttribute('style','position:fixed');
+      wrapper.setAttribute('style', `position:fixed; overflow: hidden; top: ${-this.currentYPos}px`);
       
 
       this.loginViewContainerRef.clear();
@@ -57,8 +64,20 @@ export class AppComponent implements AfterViewInit, OnInit {
  removeLoginComponent() {
     this.loginViewContainerRef.clear();
     const wrapper = this.globalWrapper.nativeElement;
-    wrapper.style.overflow = "";
-    wrapper.style.position = "static";
+    wrapper.setAttribute('style', 'position:static; overflow: auto;');
+    window.scroll(0, this.currentYPos);
+  }
+
+  manageNavbar() {
+    const navbarEl = this.navbar.nativeElement;
+
+    if(this.currentYPos > this.previousYPos && this.currentYPos > 20) {
+      navbarEl.style.top = "-80px";
+    } else {
+      navbarEl.style.top = "0px";
+    }
+    
+    this.previousYPos = this.currentYPos;
   }
   
 }
