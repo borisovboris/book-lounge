@@ -20,6 +20,12 @@ body {
 
 .global-wrapper {
     width: 100%;
+    background-image: url("../assets/images/stains.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior:  smooth;
 }
 
 

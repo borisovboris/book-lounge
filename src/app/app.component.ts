@@ -13,6 +13,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('logintemp', { read: ViewContainerRef }) private loginViewContainerRef: ViewContainerRef; 
   @ViewChild(NavComponent, {read: ElementRef}) navbar: ElementRef;
   @ViewChild('globalWrapper') globalWrapper: ElementRef;
+  @ViewChild('container') container: ElementRef;
 
   private currentYPos: number = 0;
   private previousYPos: number = 0;
@@ -49,8 +50,14 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   async loadLoginComponent() {
       const wrapper = this.globalWrapper.nativeElement;
-      // wrapper.setAttribute('style','position:fixed');
-      wrapper.setAttribute('style', `position:fixed; overflow: hidden; top: ${-this.currentYPos}px`);
+      const container = this.container.nativeElement;
+   
+      wrapper.setAttribute('style', 
+      `position:fixed; 
+      overflow: hidden; 
+      top: ${-this.currentYPos}px;
+      `);
+
       
 
       this.loginViewContainerRef.clear();
@@ -63,8 +70,13 @@ export class AppComponent implements AfterViewInit, OnInit {
 
  removeLoginComponent() {
     this.loginViewContainerRef.clear();
+
     const wrapper = this.globalWrapper.nativeElement;
+    const container = this.container.nativeElement;
+    
     wrapper.setAttribute('style', 'position:static; overflow: auto;');
+
+
     window.scroll(0, this.currentYPos);
   }
 
