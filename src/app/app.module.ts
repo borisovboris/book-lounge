@@ -11,6 +11,7 @@ import { GenresListComponent } from './genre/genres-list/genres-list.component';
 import { GenreComponent } from './genre/genre/genre.component';
 import { TodayBooksComponent } from './today-books/today-books.component';
 import { SharedModule } from './shared/shared.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     FillIconDirective,
     GenresListComponent,
     GenreComponent,
-    TodayBooksComponent
+    TodayBooksComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <div class="float-right">
         <a class="nav-btn btn underline" routerLink="/books">Books</a>
         <a class="nav-btn btn underline" routerLink="/genres">Genres</a>
-        <a class="nav-btn btn underline">About</a>
+        <a class="nav-btn btn underline" routerLink="/about">About</a>
 
         
          <a *ngIf="!this.authService.isLoggedIn; else logout" class="nav-btn btn">
