@@ -21,4 +21,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log('login destroyed');
   }
 
+  login() {
+    this.authService.login();
+    this.authService.callLoginComponent('close');
+  }
+
 }

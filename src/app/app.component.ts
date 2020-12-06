@@ -44,21 +44,18 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.currentYPos = data;
       }
 
+      console.log(this.authService.isLoggedIn);
       this.manageNavbar();
     });
   }
 
   async loadLoginComponent() {
       const wrapper = this.globalWrapper.nativeElement;
-      const container = this.container.nativeElement;
-   
       wrapper.setAttribute('style', 
       `position:fixed; 
       overflow: hidden; 
       top: ${-this.currentYPos}px;
       `);
-
-      
 
       this.loginViewContainerRef.clear();
       
@@ -72,10 +69,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.loginViewContainerRef.clear();
 
     const wrapper = this.globalWrapper.nativeElement;
-    const container = this.container.nativeElement;
-    
     wrapper.setAttribute('style', 'position:static; overflow: auto;');
-
 
     window.scroll(0, this.currentYPos);
   }

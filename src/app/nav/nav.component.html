@@ -5,7 +5,11 @@
         <a class="nav-btn btn underline" routerLink="/genres">Genres</a>
         <a class="nav-btn btn underline">About</a>
 
-         <a class="nav-btn btn"><i class="far fa-user" appFillIcon (click)="this.authService.callLoginComponent('open')">
-         </i></a> <!-- Login -->
+        
+         <a *ngIf="!this.authService.isLoggedIn; else logout" class="nav-btn btn">
+             <i class="far fa-user" appFillIcon (click)="this.authService.callLoginComponent('open')"></i>
+        </a> <!-- Login -->
+
+        <ng-template #logout><a class="nav-btn btn underline" (click)="this.authService.logout()">Logout</a></ng-template>
     </div>
 </nav>
