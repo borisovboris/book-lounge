@@ -5,10 +5,12 @@ import { BookRoutingModule } from './book-routing.module';
 import { BookListComponent } from './book-list/book-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { ReviewsListComponent } from './reviews-list/reviews-list.component';
+import { ReviewComponent } from './review/review.component';
 
 
 @NgModule({
-  declarations: [BookListComponent, BookDetailsComponent],
+  declarations: [BookListComponent, BookDetailsComponent, ReviewsListComponent, ReviewComponent],
   imports: [
     CommonModule,
     BookRoutingModule,
