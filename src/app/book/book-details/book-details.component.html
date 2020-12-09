@@ -1,37 +1,45 @@
-<div class="black-text flex-container book-container">
+<div class="book-container black-text">
+
+    <div class="flex-container">
+        <div class="flex-item flex-25">
+            <img src="{{bookImage}}">
+            <div class="book-info">
+                <p>Published: {{book.publishDate}}</p>
+                <p>Pages: {{book.pages}}</p>
+                <p>Downloads: {{book.downloadsNumber}}</p>
+            </div>
     
-    <div class="flex-item flex-25">
-        <img src="{{bookImage}}">
-        <div class="book-info">
-            <p>Published: {{book.publishDate}}</p>
-            <p>Pages: {{book.pages}}</p>
-            <p>Downloads: {{book.downloadsNumber}}</p>
+            <p class="bold share-book">Share this book</p>
+            <div class="book-socials medium-font">
+                <i class="fab fa-twitter btn"></i>
+                <i class="fab fa-facebook-square btn"></i>
+                <i class="fab fa-pinterest btn"></i>
+            </div>
+            
         </div>
-
-        <p class="bold share-book">Share this book</p>
-        <div class="book-socials medium-font">
-            <i class="fab fa-twitter btn"></i>
-            <i class="fab fa-facebook-square btn"></i>
-            <i class="fab fa-pinterest btn"></i>
-        </div>
-        
-    </div>
-    <div class="flex-item flex-75">
-        <h1>{{book.title}}</h1>
-        <div>
-            <p>By: {{book.author}}</p>
-            <p>Rating Stars</p>
-        </div>
-
-        <div class="book-buttons">
-            <div class="book-button btn"><i class="fas fa-file-download"></i><a>Free Download</a></div>
-            <div class="book-button btn"><a>Read Online</a></div>
-        </div>
-
-        <p>{{book.synopsis}}</p>
-
-        <div class="book-genres">
-            <p *ngFor="let genre of book.genres" class="book-genre btn">{{genre}}</p>
+        <div class="flex-item flex-75">
+            <h1>{{book.title}}</h1>
+            <div>
+                <p>By: {{book.author}}</p>
+                <p>Rating Stars</p>
+            </div>
+    
+            <div class="book-buttons">
+                <div class="book-button btn"><i class="fas fa-file-download"></i><a>Free Download</a></div>
+                <div class="book-button btn"><a>Read Online</a></div>
+            </div>
+    
+            <p>{{book.synopsis}}</p>
+    
+            <div class="book-genres">
+                <p *ngFor="let genre of book.genres" class="book-genre btn">{{genre}}</p>
+            </div>
         </div>
     </div>
+
 </div>
+
+<div class="reviews-container black-text">
+    <app-reviews-list></app-reviews-list>
+</div>
+

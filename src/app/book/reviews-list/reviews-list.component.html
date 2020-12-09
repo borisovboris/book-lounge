@@ -1,1 +1,1 @@
-<p>reviews-list works!</p>
+<app-review *ngFor="let review of (reviews$ | async)" [review]="review"></app-review>

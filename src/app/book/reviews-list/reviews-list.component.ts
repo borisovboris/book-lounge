@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IReview } from 'src/app/core/models/review';
+import { ReviewService } from '../review.service';
 
 @Component({
   selector: 'app-reviews-list',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewsListComponent implements OnInit {
 
-  constructor() { }
+  reviews$: Observable<IReview[]>
+
+  constructor(private reviewService: ReviewService) { 
+    console.log('called');
+  }
 
   ngOnInit(): void {
+    this.reviews$ = this.reviewService.getAllReviews();
   }
 
 }

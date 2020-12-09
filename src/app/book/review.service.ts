@@ -13,8 +13,8 @@ export class ReviewService {
 
   constructor() { }
 
-  getAllReviews(): Observable<IReview[] | IReview | Observable<IReview[]>> {
-    return of(this.books$).pipe(delay(1000));
+  getAllReviews(): Observable<IReview[]> {
+    return this.books$.pipe(delay(1000));
   }
 
   addReview(review: IReview[]): void {

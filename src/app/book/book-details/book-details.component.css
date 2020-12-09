@@ -79,3 +79,8 @@
 .book-genres {
     padding: 15px 0;
 }
+
+.reviews-container {
+    background-color: #fafafa;
+    padding: 100px 200px;
+}
