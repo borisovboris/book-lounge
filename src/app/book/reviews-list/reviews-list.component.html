@@ -1,1 +1,5 @@
-<app-review *ngFor="let review of (reviews$ | async)" [review]="review"></app-review>
+
+<h1 class="reviews-title">Reviews</h1>
+<div class="reviews-container">
+    <app-review *ngFor="let review of (reviews$ | async)" [review]="review"></app-review>
+</div>
