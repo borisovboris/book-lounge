@@ -1,5 +1,5 @@
 export interface IReview {
     id: number;
-    userId: number;
+    username: string;
     content: string;
 }
