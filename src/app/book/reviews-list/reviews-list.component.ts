@@ -13,7 +13,7 @@ export class ReviewsListComponent implements OnInit {
   reviews$: Observable<IReview[]>
 
   constructor(private reviewService: ReviewService) { 
-    console.log('called');
+
   }
 
   ngOnInit(): void {

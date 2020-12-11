@@ -10,6 +10,6 @@ import { TextareaAutogrowDirective } from './textarea-autogrow.directive';
   imports: [
     CommonModule
   ],
-  exports: [BookComponent]
+  exports: [BookComponent, TextareaAutogrowDirective]
 })
 export class SharedModule { }

@@ -5,7 +5,9 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 })
 export class FillIconDirective {
 
-  constructor(private el: ElementRef, private renderer2: Renderer2 ) { }
+  constructor(private el: ElementRef, private renderer2: Renderer2 ) { 
+    
+  }
 
   @HostListener('mouseover') 
   onMouseOver() {

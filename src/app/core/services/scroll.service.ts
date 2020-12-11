@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, fromEvent, Observable } from 'rxjs';
+import { BehaviorSubject, fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 @Injectable({
