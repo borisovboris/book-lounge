@@ -10,4 +10,10 @@
     resize: none;
     width: 100%;
     overflow: auto;
+    border: none;
+    border-bottom: solid 1px gray;
+}
+
+.add-review textarea:focus, input:focus{
+    outline: 0;
 }

@@ -9,14 +9,17 @@ export class TextareaAutogrowDirective implements AfterViewInit, OnDestroy {
 
   private textareaSubscription: Subscription;
   @Input('appTextareaAutogrow') throttleInterval: number;
-
-  constructor(private textarea: ElementRef, private renderer2: Renderer2) { }
+  private fontSize: any;
+  
+  constructor(private textarea: ElementRef, private renderer2: Renderer2) { 
+    this.fontSize = this.textarea.nativeElement.fontSize;
+  }
 
   autogrow(): void {
     const textarea = this.textarea.nativeElement;     
     this.renderer2.setStyle(textarea, 'overflow', 'hidden');
     this.renderer2.setStyle(textarea, 'height', '0px');
-    this.renderer2.setStyle(textarea, 'height', `${+textarea.scrollHeight +18}px`);
+    this.renderer2.setStyle(textarea, 'height', `${+textarea.scrollHeight + 22.4}px`);
   }
 
   ngAfterViewInit() {
