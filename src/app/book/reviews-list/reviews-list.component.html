@@ -2,7 +2,16 @@
     <h1 class="reviews-title">Reviews</h1>
 
     <div class="add-review">
-        <textarea class="small-font" placeholder="Add review" [appTextareaAutogrow]="200"></textarea>
+        <textarea class="small-font float-left" 
+        placeholder="Add review" 
+        [appTextareaAutogrow]="200" 
+        #reviewTextarea
+        ></textarea>
+        <p 
+        id="add-review-button" 
+        class="btn small-font add-btn foat-left" 
+        (click)="addReview(reviewTextarea.value); reviewTextarea.value = '';"
+        >Add</p>
     </div>
 
     <div class="reviews-container">

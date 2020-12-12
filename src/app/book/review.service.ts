@@ -17,8 +17,16 @@ export class ReviewService {
     return this.books$.pipe(delay(1000));
   }
 
-  addReview(review: IReview[]): void {
-   
+  addReview(reviewContent: string): void {
+
+    const newReview = { id: reviews.length + 1,
+    username: 'Anonymous',
+    content: reviewContent
+    }
+    reviews.unshift(newReview);
+
+    
+    this.books.next(reviews);
   }
 
 }

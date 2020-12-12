@@ -20,4 +20,8 @@ export class ReviewsListComponent implements OnInit {
     this.reviews$ = this.reviewService.getAllReviews();
   }
 
+  addReview(review: string) {
+    this.reviewService.addReview(review);
+  }
+
 }
