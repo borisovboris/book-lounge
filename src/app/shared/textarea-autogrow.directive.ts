@@ -1,15 +1,16 @@
 import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnDestroy, Renderer2 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
+import { debounceTime, throttleTime } from 'rxjs/operators';
 
 @Directive({
   selector: '[appTextareaAutogrow]'
 })
 export class TextareaAutogrowDirective implements AfterViewInit, OnDestroy {
 
-  private textareaSubscription: Subscription;
+  private textareaSubscriptions: Subscription[] = [];
   @Input('appTextareaAutogrow') throttleInterval: number | 200;
-  private fontSize: number;
+  private debounceInterval: number = 250;
+  private fontSize: number = 0;
   
   constructor(private textarea: ElementRef, private renderer2: Renderer2) { 
   }
@@ -26,13 +27,22 @@ export class TextareaAutogrowDirective implements AfterViewInit, OnDestroy {
       window.getComputedStyle(this.textarea.nativeElement, null).getPropertyValue('font-size')
     );
 
-    this.textareaSubscription = fromEvent(this.textarea.nativeElement, 'keydown').pipe(throttleTime(this.throttleInterval)).subscribe(
-      () => { this.autogrow();  }
-    )
+    this.textareaSubscriptions.push(
+      fromEvent(this.textarea.nativeElement, 'keydown').pipe(throttleTime(this.throttleInterval)).subscribe(
+        () => { this.autogrow(); }
+      )
+    );
+
+    this.textareaSubscriptions.push(
+      fromEvent(window, 'resize').pipe(debounceTime(this.debounceInterval)).subscribe(
+        () => { this.autogrow(); }
+      )
+    );
+
   }
 
   ngOnDestroy() {
-    this.textareaSubscription.unsubscribe();
+    this.textareaSubscriptions.forEach(subscription => subscription.unsubscribe());
   }
   
 }
