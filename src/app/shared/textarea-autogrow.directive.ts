@@ -8,7 +8,7 @@ import { throttleTime } from 'rxjs/operators';
 export class TextareaAutogrowDirective implements AfterViewInit, OnDestroy {
 
   private textareaSubscription: Subscription;
-  @Input('appTextareaAutogrow') throttleInterval: number;
+  @Input('appTextareaAutogrow') throttleInterval: number | 200;
   private fontSize: number;
   
   constructor(private textarea: ElementRef, private renderer2: Renderer2) { 

@@ -3,7 +3,7 @@
 }
 
 .reviews-container:nth-child(odd) {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
 }
 
 .add-review textarea {
@@ -12,6 +12,8 @@
     overflow: auto;
     border: none;
     border-bottom: solid 1px gray;
+    background-color: inherit;
+    margin: 20px 0;
 }
 
 .add-review textarea:focus, input:focus{
