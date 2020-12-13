@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login() {
     this.authService.login();
-    this.authService.callLoginComponent('close');
   }
 
 }
