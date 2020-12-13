@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
-import { AuthService } from './core/services/auth.service';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
