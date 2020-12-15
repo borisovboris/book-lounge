@@ -73,6 +73,10 @@
     padding-top: 150px;
 }
 
+.padding-sides-200 {
+    padding: 0 25px;
+}
+
 .centered {
   position: absolute;
   top: 50%;
@@ -94,4 +98,23 @@
     background: linear-gradient(to right, #ed213a, #93291e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (min-width: 641px) {
+    .padding-sides-200 {
+        padding: 0px 50px;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .padding-sides-200 {
+        padding: 0px 75px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .padding-sides-200 {
+        padding: 0px 125px;
+    }
 }

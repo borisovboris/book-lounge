@@ -1,6 +1,7 @@
 #today-books-container {
     background-color: black;
-    padding: 50px 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     overflow: auto;
 }
 

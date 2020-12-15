@@ -2,11 +2,13 @@ import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, OnInit,
 import { NavComponent } from './nav/nav.component';
 import { ScrollService } from './core/services/scroll.service';
 import { AuthService } from './auth/auth.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
 export class AppComponent implements AfterViewInit, OnInit {
 

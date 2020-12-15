@@ -5,12 +5,13 @@
 }
 
 .flex-item {
-    flex: 25%;
+    flex: 50%;
     flex-grow: 0;
 }
 
 #genres-list-container {
-    padding: 50px 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: #f2f2f2;
     margin-top: 100px;
     overflow: auto;
@@ -38,4 +39,17 @@
 
 .margin-left-8 {
     margin-left: 8px;
+}
+
+
+@media screen and (min-width: 641px) {
+    .flex-item {
+        flex: 33.33%;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .flex-item {
+        flex: 25%;
+    }
 }
