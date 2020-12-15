@@ -16,7 +16,7 @@
 }
 
 .flex-item {
-    flex: 16.666%;
+    flex: 50%;
     flex-grow: 0;
 }
 
@@ -37,4 +37,18 @@
     background-size: 100% 100%;
     color: black;
     cursor: pointer;
+}
+
+@media screen and (min-width: 641px) {
+    .flex-item {
+        flex: 25%;
+        flex-grow: 0;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .flex-item {
+        flex: 16.666%;
+        flex-grow: 0;
+    }
 }
