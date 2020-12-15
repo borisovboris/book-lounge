@@ -1,4 +1,4 @@
-<h1 class="center-text largest-font letter-spacing padding-top-200">{{heading}}</h1>
+<h1 class="center-text largest-font letter-spacing padding-top-200 padding-sides-200">{{heading}}</h1>
 <div id="books-container">
     <div class="flex-container black-text medium-font">
         <app-book *ngFor="let book of ($books | async)" [book]="book" class="flex-item"></app-book>
